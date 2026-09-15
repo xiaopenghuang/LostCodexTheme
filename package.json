@@ -1,6 +1,6 @@
 {
   "name": "lost-codex-theme",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "private": true,
   "type": "module",
   "description": "A local-first visual theme editor for Codex Desktop",

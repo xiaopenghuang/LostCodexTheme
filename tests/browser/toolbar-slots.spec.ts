@@ -26,7 +26,7 @@ for (const mode of ['dark', 'light'] as const) {
     await page.setContent(`<!doctype html><html class="${mode}" data-theme="${mode}" data-codex-os="win32" data-codex-window-type="electron"><head></head><body>
       <aside class="app-shell-left-panel">Projects</aside><main data-app-shell-main-surface><div class="composer-surface-chrome">Composer</div></main>
       <header data-pip-obstacle="app-shell-header">
-        <div data-testid="app-shell-header-context-menu-surface"><div id="central" data-app-shell-header-obstacle="true"></div><div data-app-shell-page-header="true"><div data-app-shell-header-toolbar="true"><div id="page-actions" class="ms-auto"></div></div></div></div>
+        <div data-testid="app-shell-header-context-menu-surface"><div id="central" data-app-shell-header-obstacle="true"></div><div data-app-shell-page-header="true"><div class="_Toolbar_1r2f4_2 flex items-center" data-app-shell-header-toolbar="true"><div id="page-identity" style="width:100px;height:28px;flex-shrink:0;font:14px/28px sans-serif">Chat title</div><div id="page-actions" class="ms-auto"></div></div></div></div>
         <div data-test-id="header-shell-slot" data-app-shell-header-obstacle="true">
           <div aria-hidden="true" class="invisible"><div class="no-drag"><button id="measure" class="bg-surface" tabindex="-1">...</button></div></div>
           <div id="slot" class="pointer-events-none"><div id="action" class="no-drag pointer-events-auto"><button id="more" class="bg-surface" aria-label="More" aria-haspopup="menu" data-state="closed">...</button></div></div>
@@ -50,12 +50,22 @@ for (const mode of ['dark', 'light'] as const) {
     const original = await page.locator('#more').evaluate(el => getComputedStyle(el).backgroundColor);
     for (const [width, parent] of [[1920, '#slot'], [900, '#central'], [1920, '#page-actions'], [1920, '#slot']] as const) {
       await page.setViewportSize({ width, height: 900 });
+      await page.locator('header').evaluate(el => el.setAttribute('data-app-shell-header-edge-scroll', 'true'));
       await page.locator(parent).evaluate(el => el.append(document.querySelector('#action')!));
       const before = await geometry();
       await invoke(page, 'apply', render());
       await page.mouse.move(1, 1);
       await expect(page.locator('#more')).toHaveAttribute('data-lct-part', 'toolbar-button');
       expect(await page.locator('#more').evaluate(el => getComputedStyle(el).backgroundColor)).toMatch(/, 0\)$/);
+      // Codex paints the toolbar's direct children when content meets the header.
+      // A transparent button alone still exposes this opaque container.
+      for (const id of ['page-actions', 'page-identity']) {
+        await expect(page.locator(`#${id}`)).toHaveCSS('background-color', 'rgba(0, 0, 0, 0)');
+      }
+      for (const scrolled of ['false', 'true']) {
+        await page.locator('header').evaluate((el, value) => el.setAttribute('data-app-shell-header-edge-scroll', value), scrolled);
+        await expect(page.locator('#page-actions')).toHaveCSS('background-color', 'rgba(0, 0, 0, 0)');
+      }
       expect(await geometry()).toEqual(before);
       await expect(page.locator('#measure')).toBeHidden();
       for (const selector of ['#caption button', '#menu button', '#unrelated button']) await expect(page.locator(selector)).not.toHaveAttribute('data-lct-part');
@@ -76,6 +86,9 @@ for (const mode of ['dark', 'light'] as const) {
       await invoke(page, 'restore');
       await expect(page.locator('#more')).not.toHaveAttribute('data-lct-part');
       await expect(page.locator('#more')).toHaveCSS('background-color', original);
+      const restoredFill = await page.locator('#page-actions').evaluate(el => getComputedStyle(el).backgroundColor);
+      expect(restoredFill).not.toBe('rgba(0, 0, 0, 0)');
+      await expect(page.locator('#page-actions')).not.toHaveAttribute('data-lct-part');
     }
     doc = patchTheme('toolbarButtons', { background: '#123456', opacity: 0.5 })(doc);
     await invoke(page, 'apply', render());

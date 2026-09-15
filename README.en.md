@@ -9,7 +9,7 @@
 <p align="center"><a href="README.md">中文</a> · English</p>
 
 <p align="center">
-  <a href="https://github.com/xiaopenghuang/LostCodexTheme/releases/tag/v0.2.0"><img src="https://img.shields.io/badge/version-0.2.0_preview-38523f" alt="v0.2.0 preview" /></a>
+  <a href="https://github.com/xiaopenghuang/LostCodexTheme/releases/tag/v0.2.1"><img src="https://img.shields.io/badge/version-0.2.1_preview-38523f" alt="v0.2.1 preview" /></a>
   <img src="https://img.shields.io/badge/platform-Windows_x64-0078D4" alt="Windows x64" />
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-586c55" alt="MIT license" /></a>
   <img src="https://img.shields.io/badge/built_with-Tauri_2_%2B_React-52697c" alt="Tauri 2 and React" />
@@ -17,7 +17,7 @@
 
 LostCodexTheme is a local-first visual theme editor for Codex Desktop on Windows. Customize backgrounds, sidebars, the composer, messages, and work panels without writing CSS, with an isolated preview as you edit. Built with Tauri 2, Rust, React, and TypeScript, the packaged app requires neither Node.js nor Rust.
 
-This is an independent third-party project, not affiliated with or endorsed by OpenAI. Version 0.2.0 is a public preview. Live Codex compatibility and installation, upgrade, and uninstall acceptance remain incomplete; this release does not certify any Codex version as fully compatible.
+This is an independent third-party project, not affiliated with or endorsed by OpenAI. Version 0.2.1 is a public preview. Live Codex compatibility and installation, upgrade, and uninstall acceptance remain incomplete; this release does not certify any Codex version as fully compatible.
 
 ## Preview
 
@@ -37,7 +37,7 @@ The screenshot shows the editor's simulated preview, not a live Codex conversati
 
 ## Download And Use
 
-Download `LostCodexTheme_0.2.0_x64-setup.exe` from [GitHub Releases](https://github.com/xiaopenghuang/LostCodexTheme/releases). The installer targets Windows x64 and the desktop UI requires Microsoft Edge WebView2 Runtime. The current installer is not code-signed; a SHA-256 checksum file is provided alongside it.
+Download `LostCodexTheme_0.2.1_x64-setup.exe` from [GitHub Releases](https://github.com/xiaopenghuang/LostCodexTheme/releases). The installer targets Windows x64 and the desktop UI requires Microsoft Edge WebView2 Runtime. The current installer is not code-signed; a SHA-256 checksum file is provided alongside it.
 
 Open LostCodexTheme, choose a preset or upload a wallpaper, adjust the modules, and save your theme. Before connecting, save your work and fully exit Codex yourself, then use the connection action in the editor's upper-right corner to start a themed session. Saving a theme alone does not apply it to an already-open Codex window.
 
@@ -49,7 +49,7 @@ Applying a theme synchronizes Codex's saved native light/dark appearance so that
 
 Compatibility observations and automated stylesheet fixtures are based on Codex `26.908.4834.0`. Automated tests do not replace live-window acceptance, and Codex updates may require adapter changes. Live sidebar width follows Codex's own divider; the editor's width setting affects only the simulated preview.
 
-See the [release notes](docs/releases/0.2.0.md) for validation scope, known limitations, and fixes. Report problems through [Issues](https://github.com/xiaopenghuang/LostCodexTheme/issues) with your Windows and Codex versions, reproduction steps, and redacted screenshots. Do not include credentials or private conversations.
+See the [release notes](docs/releases/0.2.1.md) for validation scope, known limitations, and fixes. Report problems through [Issues](https://github.com/xiaopenghuang/LostCodexTheme/issues) with your Windows and Codex versions, reproduction steps, and redacted screenshots. Do not include credentials or private conversations.
 
 ## Run From Source
 

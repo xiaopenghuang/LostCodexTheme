@@ -69,6 +69,12 @@
   background: transparent !important;
 }
 
+/* Edge-scroll paints the native toolbar's child wrappers, even when its
+   buttons are transparent. Clear only that paint, not geometry or hit areas. */
+[data-lct-part="header"] [data-app-shell-page-header] [data-app-shell-header-toolbar] > * {
+  background-color: transparent !important;
+}
+
 /* Only panel chrome becomes transparent. Tokens also reach native file editor
    shadow roots; syntax, diff, terminal and embedded browser content stay native. */
 [data-lct-part="workspace-shell"],

@@ -9,7 +9,7 @@
 <p align="center">中文 · <a href="README.en.md">English</a></p>
 
 <p align="center">
-  <a href="https://github.com/xiaopenghuang/LostCodexTheme/releases/tag/v0.2.0"><img src="https://img.shields.io/badge/version-0.2.0_preview-38523f" alt="v0.2.0 预发布版" /></a>
+  <a href="https://github.com/xiaopenghuang/LostCodexTheme/releases/tag/v0.2.1"><img src="https://img.shields.io/badge/version-0.2.1_preview-38523f" alt="v0.2.1 预发布版" /></a>
   <img src="https://img.shields.io/badge/platform-Windows_x64-0078D4" alt="Windows x64" />
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-586c55" alt="MIT 许可证" /></a>
   <img src="https://img.shields.io/badge/built_with-Tauri_2_%2B_React-52697c" alt="Tauri 2 和 React" />
@@ -17,7 +17,7 @@
 
 LostCodexTheme 是一款面向 Windows 的本地优先可视化主题编辑器。无需手写 CSS，即可调整 Codex 桌面端的背景、侧栏、输入框、消息和工作面板，并在独立预览中查看效果。桌面程序使用 Tauri 2、Rust、React 和 TypeScript 构建，使用时无需安装 Node.js 或 Rust。
 
-本项目为独立第三方工具，与 OpenAI 无隶属或背书关系。当前 v0.2.0 为公开预发布版，真实 Codex 窗口适配和安装、升级、卸载验收尚未完成，不代表对任何 Codex 版本的完整兼容承诺。
+本项目为独立第三方工具，与 OpenAI 无隶属或背书关系。当前 v0.2.1 为公开预发布版，真实 Codex 窗口适配和安装、升级、卸载验收尚未完成，不代表对任何 Codex 版本的完整兼容承诺。
 
 ## 界面预览
 
@@ -37,7 +37,7 @@ LostCodexTheme 是一款面向 Windows 的本地优先可视化主题编辑器�
 
 ## 下载与使用
 
-从 [GitHub Releases](https://github.com/xiaopenghuang/LostCodexTheme/releases) 下载 `LostCodexTheme_0.2.0_x64-setup.exe`。安装包面向 Windows x64，桌面界面需要 Microsoft Edge WebView2 Runtime。当前安装包未进行代码签名，同一发布页提供 SHA-256 校验文件。
+从 [GitHub Releases](https://github.com/xiaopenghuang/LostCodexTheme/releases) 下载 `LostCodexTheme_0.2.1_x64-setup.exe`。安装包面向 Windows x64，桌面界面需要 Microsoft Edge WebView2 Runtime。当前安装包未进行代码签名，同一发布页提供 SHA-256 校验文件。
 
 安装后打开 LostCodexTheme，选择预设或上传背景图，调整模块样式并保存主题。准备连接前，请先保存 Codex 中的工作并自行完全退出 Codex，再使用编辑器右上角的连接入口启动主题会话。仅保存主题不会自动应用到已经打开的 Codex 窗口。
 
@@ -49,7 +49,7 @@ LostCodexTheme 是一款面向 Windows 的本地优先可视化主题编辑器�
 
 适配观察与自动化样式夹具基于 Codex `26.908.4834.0`。自动化测试不等于真实窗口验收，Codex 更新后内部结构变化可能需要新的适配。侧栏实际宽度由 Codex 自带的分隔条控制，编辑器中的宽度只影响模拟预览。
 
-v0.2.0 的验证范围、已知限制和修复内容见 [发布说明](docs/releases/0.2.0.md)。问题反馈请附上 Windows 版本、Codex 版本、复现步骤和已脱敏截图，提交至 [Issues](https://github.com/xiaopenghuang/LostCodexTheme/issues)，不要上传账号凭据或私人对话。
+v0.2.1 的验证范围、已知限制和修复内容见 [发布说明](docs/releases/0.2.1.md)。问题反馈请附上 Windows 版本、Codex 版本、复现步骤和已脱敏截图，提交至 [Issues](https://github.com/xiaopenghuang/LostCodexTheme/issues)，不要上传账号凭据或私人对话。
 
 ## 从源码运行
 

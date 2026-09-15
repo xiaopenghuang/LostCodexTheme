@@ -1,5 +1,24 @@
 # Reference Research
 
+## 0.2.1 Header Edge-Scroll Backdrop
+
+With the user's permission, read-only DOM/computed-style inspection of the
+running Codex 26.908.4834.0 found that the chat-actions button was correctly
+mapped and transparent. Its direct parent was opaque. The installed stylesheet
+applies `background-color: var(--color-surface)` to `_Toolbar_1r2f4_2 > *` when
+the header has `data-app-shell-header-edge-scroll="true"` and is not a tab-row
+or split-workspace header. Maximization was the reported trigger, not the CSS
+condition itself. The fix clears only the background color of direct toolbar
+wrappers inside the mapped page header, leaving button styling and layout intact.
+
+Installed-CSS regressions reproduced opaque fills in both palettes before the
+fix and now check transparent wrappers, edge-scroll transitions, viewport and
+action relocation, interaction, and restoration. A temporary CSSOM rule in the
+existing owned theme sheet also changed the live wrapper from opaque to
+transparent with identical button/wrapper geometry. It does not persist across
+reapplication by an old editor. No Codex restart or native preference changes
+were performed for this check; full live acceptance remains incomplete.
+
 ## 0.1.10 Header Button Variants
 
 The 0.1.9 toolbar mapping covered only central header-obstacle/no-drag actions.
