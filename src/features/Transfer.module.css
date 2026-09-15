@@ -1,0 +1,21 @@
+.transfer { max-width: 920px; margin: 8px auto 40px; }
+.transfer h1 { font-size: clamp(22px,2.2vw,30px); letter-spacing: -1px; font-weight: 600; margin: 15px 0 12px; }
+.intro { color: var(--muted); font-size: 12px; line-height: 1.8; }
+.cards { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 35px; }
+.cards article { padding: 26px; background: var(--paper); border: 1px solid var(--line); border-radius: 14px; min-width: 0; }
+.cardIcon { width: 47px; height: 47px; border-radius: 13px; background: #e9eee4; display: grid; place-items: center; color: var(--accent); }
+.cards h2 { font-size: 16px; font-weight: 600; margin: 23px 0 12px; }
+.cards p { font-size: 12px; line-height: 1.9; color: var(--muted); margin: 0; min-height: 60px; }
+.cards p.compatibility { min-height: 0; font-size: 10px; margin-top: 12px; line-height: 1.8; }
+.drop { height: 208px; border: 1px dashed #aebdac; background: #f6f8f2; border-radius: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 13px; margin-top: 22px; position: relative; color: var(--accent); cursor: pointer; }
+.drop strong { font-size: 12px; font-weight: 550; }
+.drop small { font-size: 9px; color: var(--muted); }
+.drop input { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; }
+.drop:focus-within { outline: 2px solid var(--accent); outline-offset: 3px; }
+.exportPreview { min-height: 166px; display: flex; flex-direction: column; gap: 12px; justify-content: center; align-items: center; margin-top: 22px; }
+.exportPreview > svg { color: #869a80; }
+.exportPreview strong { font-size: 13px; font-weight: 550; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.exportPreview span { color: var(--muted); font-size: 10px; }
+.safety { display: flex; align-items: center; justify-content: center; gap: 10px; color: var(--muted); font-size: 11px; margin-top: 30px; line-height: 1.8; }
+.safety svg { flex-shrink: 0; }
+@media(max-width:1150px) { .cards { grid-template-columns: 1fr; } .cards article { padding: 22px; } }

@@ -1,0 +1,51 @@
+.shelf { padding-top: 24px; margin-top: 4px; }
+.shelf header { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 15px; }
+.shelf header > div { display: flex; align-items: baseline; gap: 12px; }
+.shelf h2 { font-size: 12px; font-weight: 650; margin: 0; }
+.shelf header span { color: var(--muted); font-size: 10px; }
+.shelf header button { margin: 0; }
+.shelfCards { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 15px; }
+.presetCard { border: 0; padding: 0; background: none; cursor: pointer; text-align: left; min-width: 0; color: var(--ink); }
+.presetCard > span { display: flex; align-items: center; justify-content: space-between; gap: 4px; font-size: 10px; font-weight: 550; padding: 10px 2px 0; }
+.presetCard > span i { width: 7px; height: 7px; border-radius: 50%; border: 1px solid #0001; }
+.miniature { height: 78px; display: flex; overflow: hidden; border-radius: 8px; background: var(--mini-bg); border: 1px solid #0002; padding: 0; transition: box-shadow 160ms; }
+.presetCard:hover .miniature { box-shadow: 0 0 0 3px #68867124; }
+.miniSide { background: var(--mini-side); width: 26%; padding: 11px 8px; flex-shrink: 0; }
+.miniSide i { height: 3px; display: block; background: var(--mini-text); opacity: .18; width: 85%; margin-bottom: 6px; border-radius: 2px; }
+.miniSide i:first-child { background: var(--mini-accent); opacity: .7; width: 50%; margin-bottom: 10px; }
+.miniContent { width: 74%; padding: 10px 11px; }
+.miniContent > span { display: block; height: 2px; width: 85%; background: var(--mini-text); opacity: .35; margin: 3px 0; }
+.miniContent > span:nth-child(2) { width: 58%; }
+.miniCode { background: var(--mini-side); border: 1px solid #8881; padding: 5px; margin: 6px 0; border-radius: 3px; }
+.miniCode i { background: var(--mini-accent); display: block; height: 2px; width: 56%; opacity: .6; margin: 2px 0; }
+.miniCode i:nth-child(2) { width: 74%; }
+.miniInput { background: var(--mini-input); height: 11px; border-radius: 4px; border: 1px solid #8883; padding: 3px; }
+.miniInput i { background: var(--mini-accent); display: block; height: 4px; width: 4px; border-radius: 50%; margin-left: auto; }
+.library { max-width: 1100px; margin: 0 auto; padding-bottom: 40px; }
+.heading { display: flex; align-items: center; justify-content: space-between; gap: 25px; padding: 8px 0 35px; }
+.heading h1 { font-size: clamp(20px,2vw,30px); font-weight: 600; letter-spacing: -1px; margin: 13px 0 11px; line-height: 1.5; }
+.heading p { font-size: 12px; color: var(--muted); margin: 0; }
+.heading > button { flex-shrink: 0; }
+.sectionTitle { font-size: 13px; font-weight: 650; display: flex; gap: 12px; align-items: baseline; margin: 0 0 18px; }
+.sectionTitle small { color: var(--muted); font-size: 10px; font-weight: 400; }
+.grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 24px 17px; }
+.library .miniature { height: 114px; }
+.library .miniContent { padding: 17px; }
+.library .miniCode { margin-block: 10px; }
+.library .miniInput { margin-top: 12px; height: 14px; }
+.savedHeading { display: flex; align-items: center; justify-content: space-between; margin-top: 45px; gap: 10px; }
+.savedHeading .sectionTitle { margin-bottom: 0; }
+.search { display: flex; align-items: center; gap: 7px; padding: 9px 10px; background: var(--paper); border: 1px solid var(--line); border-radius: 7px; color: var(--muted); }
+.search input { border: 0; background: none; min-width: 0; width: 105px; font: inherit; font-size: 11px; color: var(--ink); }
+.savedHeading + .grid { margin-top: 22px; }
+.empty { margin-top: 22px; padding: 40px 20px; border: 1px dashed #cdd6c8; border-radius: 12px; display: grid; place-items: center; gap: 10px; color: var(--muted); font-size: 13px; }
+.empty small { font-size: 11px; color: var(--muted); }
+.savedCard { position: relative; min-width: 0; }
+.savedSelect { cursor: pointer; display: block; width: 100%; border: 0; padding: 0; background: none; text-align: left; color: var(--ink); }
+.savedSelect strong { display: block; font-size: 11px; font-weight: 550; padding: 10px 0 5px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; padding-right: 45px; }
+.savedSelect small { font-size: 9px; color: var(--muted); }
+.savedActions { display: flex; position: absolute; right: -5px; bottom: 12px; }
+.savedActions button { width: 24px; height: 26px; }
+@media (max-width: 1200px) { .grid { grid-template-columns: repeat(3,minmax(0,1fr)); } .shelfCards { gap: 10px; } .shelf header span { display: none; } }
+@media (max-width: 700px) { .grid { grid-template-columns: repeat(2,minmax(0,1fr)); } .heading { align-items: flex-start; flex-direction: column; } .shelfCards { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+@media (prefers-reduced-motion: reduce) { .miniature { transition: none; } }

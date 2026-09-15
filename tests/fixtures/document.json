@@ -1,0 +1,14 @@
+{
+  "theme": {
+    "meta": { "id": "fixture", "name": "Fixture", "version": 1 },
+    "global": { "appearance": "dark", "accent": "#a8c8b4", "textColor": "#e6e8e5", "density": "normal", "radius": 14, "opacity": 1 },
+    "background": { "type": "color", "color": "#1b1d1c", "gradientStart": "#202b28", "gradientEnd": "#141c23", "gradientAngle": 135, "opacity": 1, "overlay": 0.2, "blur": 0, "positionX": 50, "positionY": 50, "size": "cover" },
+    "sidebar": { "background": "#222522", "opacity": 1, "blur": 0, "radius": 0, "borderWidth": 0, "borderColor": "#333735", "shadow": false, "width": 220 },
+    "composer": { "background": "#282c29", "opacity": 1, "blur": 0, "radius": 18, "borderWidth": 1, "borderColor": "#333735", "shadow": true, "padding": 18 },
+    "userMessage": { "background": "#303b34", "opacity": 1, "blur": 0, "radius": 16, "borderWidth": 0, "borderColor": "#333735", "shadow": false, "textColor": "#e6e8e5", "spacing": 24, "maxWidth": 85 },
+    "assistantMessage": { "background": "#1b1d1c", "opacity": 0, "blur": 0, "radius": 0, "borderWidth": 0, "borderColor": "#333735", "shadow": false, "textColor": "#e6e8e5", "spacing": 24, "maxWidth": 100 },
+    "codeBlock": { "background": "#161917", "opacity": 1, "blur": 0, "radius": 12, "borderWidth": 1, "borderColor": "#333735", "shadow": false },
+    "font": { "uiFamily": "Microsoft YaHei UI", "codeFamily": "Consolas", "uiSize": 14, "codeSize": 13, "weight": 400, "lineHeight": 1.65 }
+  },
+  "customCss": ""
+}

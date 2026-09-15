@@ -1,0 +1,21 @@
+* text=auto eol=lf
+*.md text eol=lf
+*.ts text eol=lf
+*.tsx text eol=lf
+*.js text eol=lf
+*.mjs text eol=lf
+*.json text eol=lf
+*.css text eol=lf
+*.rs text eol=lf
+*.toml text eol=lf
+*.yml text eol=lf
+*.svg text eol=lf
+*.ps1 text eol=crlf
+*.nsh text eol=crlf
+*.png binary
+*.ico binary
+*.crate binary
+
+# Preserve upstream license text without project whitespace checks.
+THIRD_PARTY_DEPENDENCIES.txt -whitespace
+licenses/overrides/*.txt -whitespace

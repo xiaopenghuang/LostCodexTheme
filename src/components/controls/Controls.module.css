@@ -1,0 +1,39 @@
+.group { border: 0; padding: 22px 0; margin: 0; min-width: 0; border-bottom: 1px solid var(--line); }
+.group legend { float: left; width: 100%; padding: 0; margin: 0 0 18px; font-weight: 650; font-size: 12px; color: var(--ink); }
+.group legend + * { clear: both; }
+.hint { color: var(--muted); font-size: 11px; line-height: 1.8; margin: 0 0 16px; }
+.field { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px; margin-top: 14px; font-size: 12px; }
+.color { display: flex; align-items: center; border: 1px solid var(--line); background: var(--paper); border-radius: 7px; padding: 4px 7px 4px 4px; gap: 8px; }
+.color input[type=color] { border: 0; padding: 0; width: 25px; height: 25px; border-radius: 4px; cursor: pointer; background: transparent; }
+.color input[type=color]::-webkit-color-swatch-wrapper { padding: 0; }
+.color input[type=color]::-webkit-color-swatch { border: 1px solid #00000013; border-radius: 4px; }
+.color input[type=text] { width: 70px; border: 0; padding: 0; background: none; font-family: 'Manrope Variable', sans-serif; font-size: 11px; color: var(--ink); }
+.error { color: var(--danger); width: 100%; text-align: right; }
+.range { margin-top: 20px; }
+.range > div { display: flex; justify-content: space-between; align-items: center; font-size: 12px; }
+.range output { min-width: 46px; text-align: right; font-family: 'Manrope Variable', sans-serif; font-size: 11px; font-weight: 600; }
+.range output span { font-size: 10px; color: var(--muted); margin-left: 3px; }
+.range input { appearance: none; width: 100%; height: 4px; margin: 16px 0 5px; border-radius: 4px; background: linear-gradient(to right, var(--accent) var(--fill), #dddeda var(--fill)); cursor: pointer; }
+.range input::-webkit-slider-thumb { appearance: none; background: #fff; width: 14px; height: 14px; border: 3px solid var(--accent); border-radius: 50%; box-shadow: 0 1px 4px #0001; }
+.range input::-moz-range-thumb { background: white; width: 10px; height: 10px; border: 3px solid var(--accent); border-radius: 50%; }
+.toggle { display: flex; align-items: center; justify-content: space-between; gap: 10px; font-size: 12px; margin-top: 16px; cursor: pointer; position: relative; }
+.toggle small { display: block; color: var(--muted); margin-top: 5px; font-size: 10px; }
+.toggle input { position: absolute; right: 0; opacity: 0; width: 34px; height: 24px; cursor: pointer; }
+.track { width: 32px; height: 19px; border-radius: 12px; background: #c7ccc6; padding: 3px; flex-shrink: 0; pointer-events: none; }
+.track::after { content: ''; display: block; width: 13px; height: 13px; border-radius: 50%; background: white; box-shadow: 0 1px 2px #0002; transition: transform 150ms; }
+.toggle input:checked + .track { background: var(--accent); }
+.toggle input:checked + .track::after { transform: translateX(13px); }
+.toggle input:focus-visible + .track { outline: 2px solid var(--accent); outline-offset: 3px; }
+.segmentField { margin-top: 14px; font-size: 12px; }
+.segment { display: flex; gap: 3px; background: var(--well); padding: 3px; border-radius: 8px; margin-top: 10px; }
+.segment button { flex: 1; border: 0; background: transparent; color: var(--muted); padding: 8px 4px; font: inherit; border-radius: 5px; cursor: pointer; white-space: nowrap; }
+.segment button[aria-pressed=true] { background: var(--paper); color: var(--ink); box-shadow: 0 1px 3px #1d302112; font-weight: 600; }
+.selectField { margin-top: 18px; font-size: 12px; }
+.selectField label { display: block; margin-bottom: 9px; }
+.selectField select { width: 100%; padding: 9px; background: var(--paper); border: 1px solid var(--line); border-radius: 7px; font: inherit; color: var(--ink); }
+.modal { width: min(460px, calc(100vw - 32px)); border: 1px solid var(--line); border-radius: 18px; color: var(--ink); padding: 26px; box-shadow: 0 24px 100px #15231d30; background: var(--paper); }
+.modal::backdrop { background: #18251e60; backdrop-filter: blur(5px); }
+.modalTitle { display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; }
+.modalTitle h2 { font-size: 17px; font-weight: 650; margin: 0; }
+.modal p { color: var(--muted); line-height: 1.9; font-size: 13px; }
+@media (prefers-reduced-motion: reduce) { .track::after { transition: none; } }

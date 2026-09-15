@@ -1,0 +1,23 @@
+.preview { display: flex; flex-direction: column; min-height: 500px; height: 100%; }
+.toolbar { display: flex; justify-content: space-between; align-items: center; padding: 0 0 20px; gap: 10px; }
+.toolbar > span { display: flex; align-items: center; gap: 9px; font-size: 12px; font-weight: 600; white-space: nowrap; }
+.toolbar i { width: 6px; height: 6px; border-radius: 50%; background: #6e907b; }
+.toolbar small { font-size: 10px; font-weight: 400; color: var(--muted); margin-left: 6px; }
+.tools { display: flex; align-items: center; gap: 2px; }
+.tools button[aria-pressed=true] { background: #e2e7df; color: var(--accent); }
+.separator { width: 1px; height: 14px; background: var(--line); margin: 0 8px; }
+.stage { display: flex; justify-content: center; flex: 1; min-height: 0; }
+.window { display: flex; flex-direction: column; width: 100%; max-width: 1100px; min-width: 0; border-radius: 14px; overflow: hidden; background: #1b1d1c; border: 1px solid #303931; box-shadow: 0 18px 38px #24352217, 0 3px 7px #24352213; }
+.compact .window { max-width: 410px; }
+.windowBar { height: 33px; display: flex; align-items: center; gap: 7px; padding: 0 13px; color: #b8c1b9; background: #222623; font-size: 10px; flex-shrink: 0; }
+.windowMark { font-weight: 800; font-size: 9px; border: 1px solid #68796c; border-radius: 4px; width: 15px; height: 15px; display: grid; place-items: center; }
+.simulated { margin-left: 6px; color: #91a092; font-size: 9px; }
+.windowControls { display: flex; gap: 15px; margin-left: auto; align-items: center; }
+.windowControls span { width: 7px; height: 1px; background: #7d8a80; }
+.windowControls span:nth-child(2) { width: 7px; height: 7px; background: none; border: 1px solid #7d8a80; }
+.windowControls span:last-child { height: 7px; width: 7px; background: linear-gradient(45deg, transparent 43%, #7d8a80 43%, #7d8a80 58%, transparent 58%), linear-gradient(-45deg, transparent 43%, #7d8a80 43%, #7d8a80 58%, transparent 58%); }
+.window iframe { width: 100%; flex: 1; min-height: 430px; border: 0; }
+.note { display: flex; gap: 6px; align-items: center; justify-content: center; font-size: 10px; color: var(--muted); padding: 17px 0 0; }
+.noteDot { height: 5px; width: 5px; border: 1px solid #7a8c7e; border-radius: 50%; }
+@media (max-width: 1300px) { .toolbar small { display: none; } }
+@media (max-width: 700px) { .preview { min-height: 570px; } .toolbar { padding-bottom: 14px; } }

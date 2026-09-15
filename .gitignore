@@ -1,0 +1,36 @@
+/.tools/
+/target/
+/src-tauri/target/
+/node_modules/
+/dist/
+*.log
+/test-results/
+/playwright-report/
+*.tsbuildinfo
+/src-tauri/gen/
+/artifacts/
+
+# Local secrets, editor state, and operating-system files.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+*.p12
+/.vscode/
+/.idea/
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Local development history and generated audit output, not public product docs.
+/docs/local/
+/docs/license-audit.json
+
+# Generated assets for platforms not shipped by this Windows application.
+/src-tauri/icons/android/
+/src-tauri/icons/ios/
+/src-tauri/icons/icon.icns
+/src-tauri/icons/Square*.png
+/src-tauri/icons/StoreLogo.png

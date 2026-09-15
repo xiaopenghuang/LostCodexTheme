@@ -1,0 +1,7 @@
+{
+  "ALLOC-BSD.txt": "https://raw.githubusercontent.com/dropbox/rust-alloc-no-stdlib/ae42d22078b98549e987d2f03d12df7b984fde47/LICENSE",
+  "DEFMT-MIT.txt": "https://raw.githubusercontent.com/knurling-rs/defmt/4a8cdb44891ed57b8ff5a023b6bec7137c48708f/LICENSE-MIT",
+  "UNIC-MIT.txt": "https://raw.githubusercontent.com/open-i18n/rust-unic/5878605364af97a3358368a6eaef02104af2e016/LICENSE-MIT",
+  "WEBVIEW2-MIT.txt": "https://raw.githubusercontent.com/wravery/webview2-rs/b74dc5e2b394044bea5191052868ce7a106c202c/LICENSE",
+  "MPL-2.0.txt": "https://www.mozilla.org/MPL/2.0/ (also distributed by cssparser 0.35.0)"
+}

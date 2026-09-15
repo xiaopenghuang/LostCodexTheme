@@ -1,0 +1,110 @@
+/* Codex 26.908 token aliases. Native selectors/variables stay in the profile layer. */
+/* Native shell state drives the animated wrapper, header slots and row widths.
+   Do not replace only the aside width or clip its drag handle/controls. */
+[data-lct-part="sidebar"] {
+  z-index: 1;
+  --lct-sidebar-layout-width: var(--app-shell-left-panel-width, var(--lct-sidebar-width));
+  --lct-sidebar-layout-border-width: 0px;
+  --lct-sidebar-layout-shadow: inset 0 0 0 var(--lct-sidebar-border-width) var(--lct-sidebar-border-color), var(--lct-sidebar-shadow);
+}
+
+[data-lct-part="root"], [data-lct-part="root"] [data-theme] {
+  --vscode-foreground: var(--lct-text-color) !important;
+  --vscode-descriptionForeground: var(--lct-muted-text-color) !important;
+  --color-token-foreground: var(--lct-text-color) !important;
+  --color-token-description-foreground: var(--lct-muted-text-color) !important;
+  --color-token-text-primary: var(--lct-text-color) !important;
+  --color-token-text-secondary: var(--lct-muted-text-color) !important;
+  --color-token-text-tertiary: var(--lct-muted-text-color) !important;
+  --color-text: var(--lct-text-color) !important;
+  --color-text-emphasis: var(--lct-text-color) !important;
+  --color-text-prose: var(--lct-text-color) !important;
+  --color-text-secondary: var(--lct-muted-text-color) !important;
+  --color-text-tertiary: var(--lct-muted-text-color) !important;
+  --color-text-user-message: var(--lct-user-message-text-color) !important;
+  --color-surface: var(--lct-surface-color) !important;
+  --color-surface-secondary: var(--lct-raised-color) !important;
+  --color-surface-tertiary: var(--lct-raised-color) !important;
+  --color-surface-elevated: var(--lct-raised-color) !important;
+  --color-surface-elevated-secondary: var(--lct-raised-color) !important;
+  --color-background-panel: var(--lct-raised-color) !important;
+  --color-background-primary-soft-alpha: var(--lct-raised-color) !important;
+  --color-background-primary-soft-hover: color-mix(in srgb, var(--lct-text-color) 12%, var(--lct-raised-color)) !important;
+  --color-background-primary-soft-active: color-mix(in srgb, var(--lct-text-color) 18%, var(--lct-raised-color)) !important;
+  --color-background-secondary-soft: var(--lct-raised-color) !important;
+  --color-token-main-surface-primary: transparent !important;
+  --color-token-side-bar-background: var(--lct-panel-color) !important;
+  --color-background-primary-soft: var(--lct-raised-color) !important;
+  --color-background-primary-solid: var(--lct-accent) !important;
+  --color-text-primary-solid: var(--lct-on-accent-color) !important;
+  --color-background-composer-primary: var(--lct-accent) !important;
+  --color-text-composer-primary: var(--lct-on-accent-color) !important;
+  --color-background-composer-action-bar: var(--lct-composer-color) !important;
+  --color-border: var(--lct-border-color) !important;
+}
+
+[data-lct-part="user-message"] {
+  --lct-native-message-text: var(--lct-user-message-text-color);
+}
+[data-lct-part="assistant-message"] {
+  --lct-native-message-text: var(--lct-assistant-message-text-color);
+}
+[data-lct-part="user-message"], [data-lct-part="user-message"] [data-theme],
+[data-lct-part="assistant-message"], [data-lct-part="assistant-message"] [data-theme] {
+  --color-text: var(--lct-native-message-text) !important;
+  --color-text-emphasis: var(--lct-native-message-text) !important;
+  --color-text-prose: var(--lct-native-message-text) !important;
+  --color-token-text-primary: var(--lct-native-message-text) !important;
+  --color-token-foreground: var(--lct-native-message-text) !important;
+}
+
+/* Remove only the decorative thread-bottom scrim, not its sticky spacer or
+   other gradients. The separate composer keeps its configured surface. */
+[data-lct-part="composer-backdrop"] {
+  background: transparent !important;
+}
+
+/* Keep native fade geometry, hit testing and header drag regions intact. */
+[data-lct-part="thread-top-fade"] {
+  background: transparent !important;
+}
+
+/* Only panel chrome becomes transparent. Tokens also reach native file editor
+   shadow roots; syntax, diff, terminal and embedded browser content stay native. */
+[data-lct-part="workspace-shell"],
+[data-lct-part="root"] [data-lct-part="workspace-shell"] [data-theme] {
+  --app-shell-panel-background: transparent !important;
+  --color-surface: transparent !important;
+  --color-surface-secondary: transparent !important;
+  --color-background-panel: transparent !important;
+  --app-color-background-surface: transparent !important;
+  --app-color-background-surface-under: transparent !important;
+  --app-color-background-editor-opaque: transparent !important;
+}
+
+[data-lct-part="workspace-shell"], [data-lct-part="summary-panel"], [data-lct-part="toolbar-button"],
+[data-lct-part="root"] :is([data-lct-part="workspace-shell"], [data-lct-part="summary-panel"]) [data-theme] {
+  --color-text: var(--lct-part-text) !important;
+  --color-text-emphasis: var(--lct-part-text) !important;
+  --color-text-prose: var(--lct-part-text) !important;
+  --color-token-text-primary: var(--lct-part-text) !important;
+  --color-token-text-secondary: var(--lct-part-muted) !important;
+  --color-token-text-tertiary: var(--lct-part-muted) !important;
+  --color-text-secondary: var(--lct-part-muted) !important;
+  --color-text-tertiary: var(--lct-part-muted) !important;
+  --vscode-foreground: var(--lct-part-text) !important;
+  --vscode-descriptionForeground: var(--lct-part-muted) !important;
+  --color-token-foreground: var(--lct-part-text) !important;
+  --color-token-description-foreground: var(--lct-part-muted) !important;
+}
+
+/* The generated outer surface owns the fill; native inner layers must not repaint white. */
+[data-lct-part="composer"] {
+  --composer-layout-surface-background: transparent !important;
+  --composer-layout-surface-backdrop-filter: none !important;
+  --composer-layout-surface-shadow: none !important;
+  --composer-top-tray-background: var(--lct-raised-color) !important;
+  --composer-top-tray-border: var(--lct-border-color) !important;
+  --composer-editor-placeholder-opacity: 0.75 !important;
+  --opacity-composer-placeholder: 0.75 !important;
+}

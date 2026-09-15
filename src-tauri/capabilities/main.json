@@ -1,0 +1,7 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "main-window",
+  "description": "Only the local editor window can invoke desktop functionality.",
+  "windows": ["main"],
+  "permissions": ["core:default"]
+}

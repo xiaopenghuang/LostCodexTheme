@@ -1,0 +1,42 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "LostCodexTheme",
+  "version": "0.2.0",
+  "identifier": "com.lostcodextheme.desktop",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://127.0.0.1:1420",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist",
+    "features": ["desktop"]
+  },
+  "app": {
+    "windows": [{
+      "label": "main",
+      "title": "LostCodexTheme",
+      "width": 1440,
+      "height": 980,
+      "minWidth": 1000,
+      "minHeight": 740,
+      "center": true
+    }],
+    "security": {
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src ipc: http://ipc.localhost; frame-src 'self' blob:; worker-src 'self' blob:; object-src 'none'; base-uri 'none'; form-action 'none'"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["nsis"],
+    "category": "DeveloperTool",
+    "resources": { "../LICENSE": "LICENSE", "../THIRD_PARTY_NOTICES.md": "THIRD_PARTY_NOTICES.md", "../THIRD_PARTY_DEPENDENCIES.txt": "THIRD_PARTY_DEPENDENCIES.txt", "../licenses/sources/": "licenses/sources/" },
+    "windows": {
+      "nsis": {
+        "installMode": "currentUser",
+        "installerHooks": "installer-hooks.nsh",
+        "languages": ["SimpChinese", "English"]
+      }
+    },
+    "shortDescription": "A local-first visual theme editor for Codex Desktop",
+    "icon": ["icons/32x32.png", "icons/128x128.png", "icons/128x128@2x.png", "icons/icon.ico"]
+  }
+}
